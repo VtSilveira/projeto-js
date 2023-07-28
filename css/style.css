@@ -221,6 +221,30 @@ body {
   animation: show .5s forwards;
 }
 
+.js .js-accordion dt {
+  cursor: pointer;
+}
+
+.js .js-accordion dd {
+  display: none;
+}
+
+.js .js-accordion dd.activate-accordion {
+  display: block !important;
+  animation: slideDown .5s forwards;
+}
+
+.js-accordion dt::after {
+  content: '⬎';
+  margin-left: 10px;
+}
+
+.js .js-accordion dt.activate-accordion::after {
+  content: '⬏';
+  margin-left: 10px;
+}
+
+
 @keyframes show {
   from {
     opacity: 0;
@@ -231,3 +255,17 @@ body {
     transform: translate3d(0, 0, 0);
   }
 }
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 200px;
+  }
+}
+
+
+
